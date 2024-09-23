@@ -103,7 +103,7 @@ const Navbar = () => {
       
       {/* Mobile Menu Toggle Screen */}
       <div className={`w-screen h-screen fixed top-14 z-30
-         bg-white/30 dark:bg-slate-950/30 md:hidden
+         bg-white/30 dark:bg-slate-900/30 md:hidden
          ${menuToggle ? 'right-0' : '-right-full'}`}   
          onClick={toggleMenu}
       ></div>

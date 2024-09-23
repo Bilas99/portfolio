@@ -41,6 +41,11 @@ function Skills() {
       
    ]
    
+   const fadeInUp = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0, transition: { type: "spring" } },
+   };
+   
 return (
    <div className="w-auto h-auto my-10 rounded
       md:mx-auto md:w-11/12 lg:w-5/6"
@@ -55,17 +60,18 @@ return (
                key={lang.name}
                initial="hidden" 
                whileInView="visible"
-               variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0, transition: { type: "spring" } },
-               }}
+               variants={fadeInUp}
                className="w-max h-max py-1.5 px-2 font-medium text-[#1ac7ed] rounded flex gap-2 justify-center items-center shadow bg-gray-200 dark:bg-slate-800"
             >
                <HiBadgeCheck/>
                <span className="text-slate-950 dark:text-gray-100">
                   {lang.name}
                </span>
-               <img src={lang.icon} alt="" className="w-6 h-6"/>
+               <img 
+                  src={lang.icon} 
+                  alt={lang.name}
+                  className="w-6 h-6"
+               />
             </motion.div>
          )}
       </div>

@@ -23,7 +23,7 @@ const ContactForm = () => {
       alertRef.current?.classList.remove("hidden")
       setInterval(() => {
          clearAlertMsg()
-      }, 3000)
+      }, 5173)
       reset()
    }
    
@@ -40,6 +40,7 @@ const ContactForm = () => {
 
 return (
    <div className="px-4 flex items-center justify-center min-h-screen bg-gray-100 dark:bg-slate-900">
+      {/* Contact form */}
       <form
          onSubmit={handleSubmit(submitMessage)}
          className="w-full max-w-sm p-6 pt-4 rounded-lg shadow-md bg-white dark:bg-slate-800"
@@ -98,6 +99,7 @@ return (
             {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
          </div>
          
+         {/* Submit button */}
          <button
             type="submit"
             className="w-full bg-[#1ac7ed] text-white font-montserrat font-bold py-2 px-4 rounded-md hover:opacity-80 transition duration-75 flex justify-center items-center"

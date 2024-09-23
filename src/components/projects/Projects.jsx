@@ -11,29 +11,31 @@ const Projects = () => {
   const [isError, setIsError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Fetch data from Firestore on component mount
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-         setLoading(true)
-         const querySnapshot = await getDocs(collection(db, "projects"));
-         const projectsList = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-         }));
-         setProjects(projectsList);
-         setIsError(false)
-      } catch (error) {
-         setIsError(true)
-      } finally {
+  // Fetch projects data from Firestore
+   useEffect(() => {
+      ( async () => {
+         try {
+            setLoading(true)
+            const querySnapshot = await getDocs(collection(db, "projects"));
+            const projectsList = querySnapshot.docs.map((doc) => ({
+               id: doc.id,
+               ...doc.data(),
+            }));
+            if(projectsList.length < 1) setIsError(true)
+            setProjects(projectsList);
+         } catch (e) {
+            setIsError(true)
+         } finally {
          setLoading(false)
-      }
-    };
-
-    fetchProjects();
+         }
+      })();
   }, []);
   
-  const fadeInUp = {
+   const handleReload = () => {
+      window.navigation.reload()
+   }
+  
+   const fadeInUp = {
       hidden: { opacity: 0, y: 50 },
       visible: { opacity: 1, y: 0, transition: { type: "spring" } },
    };
@@ -51,9 +53,14 @@ return (
          </motion.h1>
          
          <div className="grid min-h-[500px] md:grid-cols-3 place-items-center gap-4 my-6">
-            {projects.map((project) => 
-            (<div key={project.id} className="w-full p-3 bg-gray-200 dark:bg-slate-800 shadow-md rounded-lg">
-               <img src={project.image} alt="gemini" className="w-full h-64 bg-cover rounded-lg"/>
+            {/* Loop Projects */}
+            { projects.map((project) => (
+            <div key={project.id} className="w-full p-3 bg-gray-200 dark:bg-slate-800 shadow-md rounded-lg">
+               <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-64 bg-cover rounded-lg"
+               />
                <div className="mt-2 flex flex-col justify-between items-stretch">
                   <h2 className="text-xl font-montserrat font-extrabold text-[#1ac7ed]">
                      {project.title}
@@ -86,16 +93,27 @@ return (
                   </ul>
                </div>
             </div>))}
-        
-         { loading && (
-            <div class="w-16 h-16 col-span-3 border-4 border-white border-t-black dark:border-black dark:border-t-white animate-spin rounded-full">
-            </div> )
-         }
-         { isError && (
-            <div class="col-span-3 text-5xl font-extrabold text-center">
-               Error Fetching Projects!
-            </div> )
-         }
+            
+            {/* when Loading */}
+            { loading && (
+               <div class="w-16 h-16 col-span-3 border-4 border-white border-t-black dark:border-black dark:border-t-white animate-spin rounded-full">
+               </div> )
+            }
+            
+            {/* when Error */}
+            { isError && (
+            <div>
+               <div class="col-span-3 text-2xl text-center text-slate-700 dark:text-gray-400 font-extrabold">
+                  Sorry! Error Fetching Projects.
+               </div>
+               <div 
+                  onClick={handleReload} 
+                  className="my-6 mx-auto w-max py-1 px-2 font-medium rounded shadow-md text-slate-700 bg-gray-200 dark:text-gray-400 dark:bg-slate-800"
+               >
+                  Relod
+               </div>
+            </div>
+            )}
          </div>
       </div>
    </div>

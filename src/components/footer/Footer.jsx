@@ -70,6 +70,7 @@ return (
          </div>
       </div>
       
+      {/* Copyright section */}
       <div className="md:w-11/12 lg:w-5/6 mx-auto">
          <p className="text-center text-xs font-medium text-[#d1dee9]">
             Copyright &copy; {date.getFullYear()} FrontEnd Developer Ltd. All Rights Reserved.
