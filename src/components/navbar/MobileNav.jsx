@@ -17,9 +17,8 @@ const MobileNav = ({
                >
                   <NavLink 
                      to={nav.to}
-                     preventScrollReset={true}
-                     className={({ isActive }) => `w-full flex items-center gap-5 py-2 px-5 text-md rounded-md hover:text-purple-400 
-                     hover:bg-slate-800 cursor-pointer ${isActive ? 'font-medium text-purple-500 bg-slate-800' : 'font-normal text-gray-100'}`}
+                     className={({ isActive }) => `w-full flex items-center gap-5 py-2 px-5 text-md rounded-md hover:text-purple-500
+                     hover:bg-slate-800 cursor-pointer ${isActive ? 'font-medium text-purple-500 bg-slate-800' : 'font-normal text-gray-200'}`}
                   >
                      {nav.icon} {nav.name}
                   </NavLink>

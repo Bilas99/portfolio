@@ -8,10 +8,7 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-import Home from "./components/home/Home.jsx";
-import About from "./components/about/About.jsx";
-import Projects from "./components/projects/Projects.jsx";
-import Contact from "./components/contact/Contact.jsx";
+import { Home, About, Projects, Contact } from "./components/index.js";
 
 const router = createBrowserRouter(
    createRoutesFromElements(

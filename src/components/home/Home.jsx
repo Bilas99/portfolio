@@ -18,7 +18,7 @@ const Home = () => {
    ]
    
 return (
-   <div className="w-full h-auto p-4 bg-gray-100 dark:bg-slate-950 text-slate-800 dark:text-gray-400">
+   <div className="w-full h-auto p-4 bg-gray-100 dark:bg-slate-900 text-slate-800 dark:text-gray-300">
       {/* Hero Sction */}
       <div className="w-full h-auto md:h-screen flex flex-wrap justify-between items-center md:mx-auto md:w-11/12 lg:w-5/6">
          <div className="w-full md:w-[49%] md:h-80 flex items-center mt-24 mb-12 md:my-auto p-5 md:px-3">
@@ -35,7 +35,7 @@ return (
                   variants={fadeInUp} 
                   initial="hidden" 
                   whileInView="visible" 
-                  className="text-4xl md:text-5xl mt-1 mb-1.5 font-montserrat font-extrabold text-amber-500"
+                  className="text-4xl md:text-5xl mt-1 mb-1.5 font-montserrat font-extrabold text-[#e3ba31]"
                >
                   Bilas Singha.
                </motion.h1>
@@ -43,7 +43,7 @@ return (
                   variants={fadeInUp} 
                   initial="hidden" 
                   whileInView="visible" 
-                  className="text-md font-bold text-cyan-500"
+                  className="text-md font-bold text-[#1ac7ed]"
                >
                   <code>
                      <Typed data={typedData}/>
@@ -92,12 +92,12 @@ return (
          variants={fadeInUp} 
          initial="hidden" 
          whileInView="visible" 
-         className="w-full md:w-11/12 lg:w-5/6 md:mx-auto h-auto my-10 py-14 bg-gray-200 dark:bg-slate-900 text-center rounded"
+         className="w-full md:w-11/12 lg:w-5/6 md:mx-auto h-auto my-10 py-14 text-center"
       >
-         <h2 className="text-xl font-montserrat font-bold text-cyan-500">
+         <h2 className="text-xl font-montserrat font-bold">
             Have any Idea's
          </h2>
-         <h1 className="text-4xl font-montserrat font-extrabold text-amber-500">
+         <h1 className="text-4xl font-montserrat font-extrabold text-[#e3ba31]">
             Let's talk with me
          </h1>
       </motion.div>
@@ -111,7 +111,7 @@ return (
          initial="hidden" 
          whileInView="visible"
          whileHover={{scale: 0.9}}
-         className="py-1 px-2 bg-purple-100 dark:bg-slate-900 text-purple-500 font-medium rounded shadow hover:outline"
+         className="py-1 px-2 bg-gray-200 dark:bg-slate-800 text-[#1ac7ed] font-medium rounded shadow hover:outline"
       >
          <Link to={to} className="flex items-center gap-2">
             {label} {icon}

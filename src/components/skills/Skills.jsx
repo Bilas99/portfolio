@@ -45,7 +45,7 @@ return (
    <div className="w-auto h-auto my-10 rounded
       md:mx-auto md:w-11/12 lg:w-5/6"
    >
-      <div className="text-2xl font-montserrat font-bold flex justify-center items-center text-purple-500 underline">
+      <div className="text-2xl font-montserrat font-bold flex justify-center items-center text-[#e3ba31] underline">
          <HiBadgeCheck/>
          Skills
       </div>
@@ -59,7 +59,7 @@ return (
                   hidden: { opacity: 0, y: 50 },
                   visible: { opacity: 1, y: 0, transition: { type: "spring" } },
                }}
-               className="w-max h-max py-1.5 px-2 font-medium text-cyan-500 rounded flex gap-2 justify-center items-center bg-gray-200 dark:bg-slate-900"
+               className="w-max h-max py-1.5 px-2 font-medium text-[#1ac7ed] rounded flex gap-2 justify-center items-center shadow bg-gray-200 dark:bg-slate-800"
             >
                <HiBadgeCheck/>
                <span className="text-slate-950 dark:text-gray-100">

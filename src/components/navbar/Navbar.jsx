@@ -31,12 +31,10 @@ const Navbar = () => {
    
    return (
    <>
-      <div className="w-full h-14 px-4 md:px-10 flex justify-between items-center backdrop-blur-md
-         bg-gray-100/30 dark:bg-slate-950/30 fixed top-0 select-none z-50">
+      <div className="w-full h-14 px-4 md:px-10 flex justify-between items-center backdrop-blur-lg bg-white/30 dark:bg-slate-900/30 fixed top-0 select-none z-50">
          <div className="w-auto h-auto">
             <NavLink 
                to='/'
-               preventScrollReset={true}
                className="text-2xl font-montserrat text-purple-500 md:text-3xl font-bold select-none"
                onClick={() => setMenuToggle(false) }
             >
@@ -53,9 +51,8 @@ const Navbar = () => {
                   >
                      <NavLink 
                         to={nav.to}
-                        preventScrollReset={true}
-                        className={({ isActive }) => `w-auto flex items-center gap-2 py-0.5 px-2 rounded-md hover:bg-gray-200 hover:text-purple-500
-                        dark:hover:bg-slate-900 dark:hover:text-purple-500 cursor-pointer ${isActive ? 'font-medium text-purple-500 bg-gray-200 dark:bg-slate-900 dark:' : 'font-normal text-slate-900 dark:text-gray-200'}`}
+                        className={({ isActive }) => `w-auto flex items-center gap-2 py-0.5 px-2 rounded-md hover:text-purple-500
+                        dark:hover:text-purple-500 cursor-pointer ${isActive ? 'font-medium text-purple-500' : 'font-normal text-slate-800 dark:text-gray-200'}`}
                      >
                         {nav.icon} {nav.name}
                      </NavLink>
@@ -65,14 +62,14 @@ const Navbar = () => {
             
             {/* Theme Toggle Buttons */}
             { themeMode !== 'dark' && 
-               <div className="w-8 h-8 text-xl text-amber-500 flex justify-center items-center rounded-full hover:bg-gray-200 select-none"
+               <div className="w-8 h-8 text-xl text-[#e3ba31] flex justify-center items-center rounded-full hover:bg-gray-200 select-none"
                   onClick={ toggleTheme }
                >
                   <MdLightMode/>
                </div>
             }
             { themeMode === 'dark' && 
-               <div className="w-8 h-8 text-xl text-slate-500 flex justify-center items-center rounded-full hover:bg-slate-900 select-none"
+               <div className="w-8 h-8 text-xl text-gray-500 flex justify-center items-center rounded-full hover:bg-slate-900 select-none"
                   onClick={ toggleTheme }
                >
                   <MdDarkMode/>

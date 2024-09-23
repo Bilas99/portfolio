@@ -19,19 +19,19 @@ const Footer = () => {
    const date = new Date();
    
 return (
-   <div className="w-full h-auto px-4 py-5 bg-gray-200 dark:bg-slate-900">
+   <div className="w-full h-auto px-4 py-5 bg-[#224146]">
       <div className="md:w-11/12 lg:w-5/6 mx-auto flex flex-wrap justify-between">
          
          {/* Social Media */}
          <div className="w-full md:w-1/2 my-4">
-            <h1 className="text-xl font-montserrat font-extrabold text-purple-500">
+            <h1 className="text-xl font-montserrat font-extrabold text-white">
                Connect with me
             </h1>
             <div className="w-56 h-max py-2 flex items-center gap-4">
                {
                   socialMedia.map((social) => 
                      <div key={social.icon} 
-                        className="w-6 h-6 flex justify-center items-center bg-cyan-500 hover:scale-95 shadow-md shadow-purple-500 rounded-full"
+                        className="w-8 h-8 flex justify-center items-center bg-[#9d8622] hover:scale-95 shadow-md rounded-full"
                      >
                         <Link to={social.url} 
                            target="_blank"
@@ -47,7 +47,7 @@ return (
          
          {/* Quick Links */}
          <div className="w-full md:w-1/2 my-4">
-            <h1 className="text-xl font-montserrat font-extrabold text-purple-500">
+            <h1 className="text-xl font-montserrat font-extrabold text-white">
                Quick Links
             </h1>
             <div className="w-full h-max py-2 flex items-center gap-4">
@@ -56,13 +56,13 @@ return (
                      <div key={nav.name} 
                         className="w-max h-auto"
                      >
-                        <Link 
+                        <NavLink 
                            to={nav.to}
-                           preventScrollReset={true}
-                           className={`w-auto hover:text-purple-500 hover:underline`}
+                           className={({ isActive }) => `w-auto gap-2 hover:underline hover:text-[#9d8622]
+                           dark:hover:text-[#9d8622] cursor-pointer ${isActive ? 'font-medium text-[#9d8622]' : 'font-normal text-white'}`}
                         >
                            {nav.name}
-                        </Link>
+                        </NavLink>
                      </div>
                   )
                }
@@ -71,7 +71,7 @@ return (
       </div>
       
       <div className="md:w-11/12 lg:w-5/6 mx-auto">
-         <p className="text-center text-xs font-medium text-slate-700 dark:text-gray-400">
+         <p className="text-center text-xs font-medium text-[#d1dee9]">
             Copyright &copy; {date.getFullYear()} FrontEnd Developer Ltd. All Rights Reserved.
          </p>
       </div>

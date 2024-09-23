@@ -6,27 +6,28 @@ import { ThemeProvider } from "./contexts/ThemeContext.js";
 
 function App() {
    const [ themeMode, setThemeMode ] = useState('light')
+   const { pathname } = useLocation();
+   
    const toggleTheme = () =>  {
       setThemeMode(`${themeMode === 'light' ? 'dark' : 'light'}`)
    }
-   const { pathname } = useLocation();
    
    useEffect(() => {
-      const theme = localStorage.getItem('theme')
+      const theme = localStorage.getItem('theme');
       
       if(theme) {
-         //alert(theme)
-         setThemeMode(theme)
+         setThemeMode(theme);
       }
-   }, [])
+   }, []);
+
    
    useEffect(() => {
-      localStorage.setItem('theme', themeMode)
-      //alert(themeMode)
-      const html = document.querySelector('html')
-      html.classList.remove('light','dark')
-      html.classList.add(themeMode)
-   }, [themeMode])
+      console.log("Updated themeMode:", themeMode);
+      localStorage.setItem('theme', themeMode);
+      const html = document.querySelector('html');
+      html.classList.remove('light', 'dark');
+      html.classList.add(themeMode);
+   }, [themeMode]);
    
    
 
