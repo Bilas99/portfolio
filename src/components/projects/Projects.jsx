@@ -115,7 +115,7 @@ return (
             
             {/* when Error */}
             { isError && (
-            <div className="col-span-3 bg-amber-100 text-center">
+            <div className="col-span-3 text-center">
                <div className="text-slate-700 dark:text-gray-400">
                   <h1 className="text-2xl font-extrabold">
                      Sorry! Error Fetching Projects.
