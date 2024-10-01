@@ -6,7 +6,7 @@ my skills and experience as a frontend developer.
 It features smooth animations, dynamic interactions, 
 and a clean, modern design. Check it out:
 
-### [🔗 Preview Live](https://portfolio-ten-orpin-17.vercel.app/)
+### [🔗 Preview Live](https://bilas99.vercel.app/)
 
 ---
 
@@ -59,17 +59,22 @@ and a clean, modern design. Check it out:
    - **Frontend**: React with Vite
    
    - **Animations**: framer-motion
+   
    - **Icons**: react-icons
+   
    - **Typing Effect**: react-typed
+   
    - **Form Handling**: react-hook-form
+   
    - **Database**: Firebase Firestore
+   
    - **Hosting**: Vercel
 
 ---
 
 ## 🎉 **Explore More**
 
-   - Visit the [Live Preview](https://portfolio-ten-orpin-17.vercel.app/)
+   - Visit the [Live Preview](https://bilas99.vercel.app/)
    
    - Check out the Code: [GitHub Repository](https://github.com/Bilas99/portfolio)
 
@@ -81,6 +86,6 @@ and a clean, modern design. Check it out:
 
 ---
 
-## ❤️ **Made with Passion by** [Bilas Singha](https://github.com/Bilas99/)
+### ❤️ **Made with Passion by** [Bilas Singha](https://github.com/Bilas99/)
 
 ---
